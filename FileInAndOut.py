@@ -54,6 +54,6 @@ class FileHandler(object):
 LocalFileHandler = FileHandler()
 #LocalFileHandler.OptimizedReadFromFile("/Users/gouthamr/Documents/PythonProjects/TaleOfTwoPumpkins.txt","r")
 #LocalFileHandler.WriteToFile("LittleHearts.txt",["I wanna\n", "You wanna\n", "I don't know."])
-#LocalFileHandler.WriteToFile("LittleHearts.txt",["I Jump\n", "You Jump\n", "Jumper is a good movie."],"a")
+#LocalFileHandler.WriteToFile("DummyTexts/LittleHearts.txt",["I Jump\n", "You Jump\n", "Jumper is a good movie.\n"],"a")
 LocalFileHandler.CopyFile("DummyTexts/LittleHearts.txt","DummyTexts/Fractacl.txt")
 LocalFileHandler.OptimizedReadFromFile("DummyTexts/Fractacl.txt")
