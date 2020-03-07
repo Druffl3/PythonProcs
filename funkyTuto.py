@@ -37,4 +37,19 @@ def globalFunc(y: int) -> int:
     global x
     x = y
     return x
-print(addFunc())
+
+global jin #marking this variable global, so that it can be manipulated inside functions as well.
+jin = "Ginger bread"
+def atmoFunc():
+    global jin
+    jin = "swamy"
+
+def atmoAtmo():
+    listOfGlobals = globals()
+    listOfGlobals["jin"] = "Arraath"
+
+print(jin)
+atmoFunc()
+print(jin)
+atmoAtmo()
+print(jin)
