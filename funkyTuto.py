@@ -38,10 +38,10 @@ def globalFunc(y: int) -> int:
     x = y
     return x
 
-global jin #marking this variable global, so that it can be manipulated inside functions as well.
+#global jin #marking this variable global, so that it can be manipulated inside functions as well.
 jin = "Ginger bread"
 def atmoFunc():
-    global jin
+    global jin #So that this method accesses the global jin
     jin = "swamy"
 
 def atmoAtmo():
