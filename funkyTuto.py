@@ -13,7 +13,7 @@ def sortingFunc():
     #sort modifies the enumerated type
     print("Sort",l)
 
-def addFunc(a):
+def addFunc(a = 1):
     """
     Adds 1 to a
     """
@@ -26,8 +26,15 @@ def mult(a,b):
 def noWork():
     pass
 
-print(mult(2,2))
-print(mult(2,"aaa"))
-print(mult("a",3))
-noWork()
-sortingFunc()
+def artistNames(*names):
+    """
+    Variatic parameter -> Any number of parameters
+    """
+    for name in names:
+        print(name)
+
+def globalFunc(y: int) -> int:
+    global x
+    x = y
+    return x
+print(addFunc())
