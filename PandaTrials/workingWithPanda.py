@@ -19,21 +19,15 @@ class pandaHandler(object):
         edf = pd.read_excel(fileName)
         return edf
 
-    def ReturnTablesFromExcel(self,*titles: list) -> pd.core.frame.DataFrame:
-        """
-        *titles is a tupple object.
-        """
+    def ReturnTablesFromExcel(self,*titles: tuple) -> pd.core.frame.DataFrame:
         fileName = titles[0]
         titles = list(titles[1:])
         edf = (pd.read_excel(fileName)).head() #Takes the first five elements only.
         requiredTables = edf[titles]
         return requiredTables
 
-    def ConvertDictToDataFrame(self, modelDictionary: dict) -> pd.core.frame.DataFrame:
+    def ConvertToDataFrame(self, modelDictionary: dict) -> pd.core.frame.DataFrame:
         return pd.DataFrame(modelDictionary)
-
-    def ConvertListToDataFrame(self, modelList: list) -> pd.core.frame.DataFrame:
-        return pd.DataFrame(modelList)
 
 
 global csv_path
@@ -48,7 +42,7 @@ dummy_song = ['a','b',('c','d'),3,['e','f']]
 pH = pandaHandler()
 
 #print(pH.ConvertToDataFrame(songs))
-#print(pH.ConvertListToDataFrame(dummy_song))
+#print(pH.ConvertToDataFrame(dummy_song))
 #print(pH.ReturnTablesFromExcel(xlsx_path,"Title","Album"))
 print(xlsx_path," opened")
 myDataFrame = pH.ReadExcelFile(xlsx_path)
