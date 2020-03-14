@@ -49,10 +49,19 @@ pH = pandaHandler()
 #print(pH.ConvertToDataFrame(songs))
 #print(pH.ConvertListToDataFrame(dummy_song))
 #print(pH.ReturnTablesFromExcel(xlsx_path,"Title","Album"))
+print(xlsx_path," opened")
 myDataFrame = pH.ReadExcelFile(xlsx_path)
-print(myDataFrame.loc[0,'Year']) # Loc -> [row index, columnt title/header]
-print(myDataFrame.iloc[1,1]) # iLoc -> [row index, column index]
-print("Table from row 0 to row 3, and column Year to Title")
-print(myDataFrame.loc[0:2,'Year':'Title']) #In Loc, rowspan: index to index
-print("Table from row 3 to row 6, and column 1:2")
-print(myDataFrame.iloc[0:2,0:3]) #In iLoc row and column span: index to nth position.
+# print(myDataFrame.loc[0,'Year']) # Loc -> [row index, columnt title/header]
+# print(myDataFrame.iloc[1,1]) # iLoc -> [row index, column index]
+# print("Table from row 0 to row 3, and column Year to Title")
+# print(myDataFrame.loc[0:2,'Year':'Title']) #In Loc, rowspan: index to index
+# print("Table from row 3 to row 6, and column 1:2")
+# print(myDataFrame.iloc[0:2,0:3]) #In iLoc row and column span: index to nth position.
+uniqueList = myDataFrame['Album'].unique() #Like an intersection between sets. Displays unique elements in the specified column.
+print(uniqueList)
+
+bonitoFrame = myDataFrame[myDataFrame['Album'] == uniqueList[4]]
+
+bonitoFrame.to_csv('bonito.csv')
+
+print(pH.ReadCSVFile("bonito.csv"))
