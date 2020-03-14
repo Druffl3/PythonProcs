@@ -5,7 +5,7 @@ Author: Goutham R
 Notes:
 requires pandas and xlrd.
 pip3 install --user pandas
-pip3 install --user xlrd
+pip3 install --user xlrd -> for excel support
 """
 import pandas as pd
 
@@ -52,3 +52,7 @@ pH = pandaHandler()
 myDataFrame = pH.ReadExcelFile(xlsx_path)
 print(myDataFrame.loc[0,'Year']) # Loc -> [row index, columnt title/header]
 print(myDataFrame.iloc[1,1]) # iLoc -> [row index, column index]
+print("Table from row 0 to row 3, and column Year to Title")
+print(myDataFrame.loc[0:2,'Year':'Title']) #In Loc, rowspan: index to index
+print("Table from row 3 to row 6, and column 1:2")
+print(myDataFrame.iloc[0:2,0:3]) #In iLoc row and column span: index to nth position.
