@@ -33,6 +33,8 @@ class pandaHandler(object):
 
     def ConvertListToDataFrame(self, modelList: list) -> pd.core.frame.DataFrame:
         return pd.DataFrame(modelList)
+
+
 global csv_path
 global xlsx_path
 global songs
@@ -46,4 +48,7 @@ pH = pandaHandler()
 
 #print(pH.ConvertToDataFrame(songs))
 #print(pH.ConvertListToDataFrame(dummy_song))
-print(pH.ReturnTablesFromExcel(xlsx_path,"Title","Album"))
+#print(pH.ReturnTablesFromExcel(xlsx_path,"Title","Album"))
+myDataFrame = pH.ReadExcelFile(xlsx_path)
+print(myDataFrame.loc[0,'Year']) # Loc -> [row index, columnt title/header]
+print(myDataFrame.iloc[1,1]) # iLoc -> [row index, column index]
