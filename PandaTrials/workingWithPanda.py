@@ -28,6 +28,11 @@ class pandaHandler(object):
         requiredTables = edf[titles]
         return requiredTables
 
+    def ConvertDictToDataFrame(self, modelDictionary: dict) -> pd.core.frame.DataFrame:
+        return pd.DataFrame(modelDictionary)
+
+    def ConvertListToDataFrame(self, modelList: list) -> pd.core.frame.DataFrame:
+        return pd.DataFrame(modelList)
 global csv_path
 global xlsx_path
 global songs
@@ -39,4 +44,6 @@ dummy_song = ['a','b',('c','d'),3,['e','f']]
 
 pH = pandaHandler()
 
+#print(pH.ConvertToDataFrame(songs))
+#print(pH.ConvertListToDataFrame(dummy_song))
 print(pH.ReturnTablesFromExcel(xlsx_path,"Title","Album"))
