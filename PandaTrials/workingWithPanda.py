@@ -5,7 +5,8 @@ Author: Goutham R
 Notes:
 requires pandas and xlrd.
 pip3 install --user pandas
-pip3 install --user xlrd -> for excel support
+pip3 install --user xlrd -> To read excel files
+pip3 install --user openpyxl -> To write excel files
 """
 import pandas as pd
 
@@ -60,8 +61,8 @@ myDataFrame = pH.ReadExcelFile(xlsx_path)
 uniqueList = myDataFrame['Album'].unique() #Like an intersection between sets. Displays unique elements in the specified column.
 print(uniqueList)
 
-bonitoFrame = myDataFrame[myDataFrame['Album'] == uniqueList[4]]
+bonitoFrame = myDataFrame[myDataFrame['Album'] == uniqueList[5]]
 
-bonitoFrame.to_csv('bonito.csv')
+bonitoFrame.to_excel('bonito.xlsx') #to_csv or to_excel
 
-print(pH.ReadCSVFile("bonito.csv"))
+print(pH.ReadExcelFile("bonito.xlsx"))
