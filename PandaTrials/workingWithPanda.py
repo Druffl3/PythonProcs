@@ -26,7 +26,7 @@ class pandaHandler(object):
         requiredTables = edf[titles]
         return requiredTables
 
-    def ConvertToDataFrame(self, modelDictionary: dict) -> pd.core.frame.DataFrame:
+    def ConvertToDataFrame(self, collection) -> pd.core.frame.DataFrame:
         return pd.DataFrame(modelDictionary)
 
 
