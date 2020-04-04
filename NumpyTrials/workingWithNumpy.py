@@ -48,7 +48,7 @@ def subVectorWithNumpy(u: np.ndarray,v: np.ndarray) -> np.ndarray:
 xSpace = np.linspace(0, 2 * np.pi, 100)
 ySpace = np.sin(xSpace)
 
-plt.plot(xSpace,ySpace)
+plt.plot(xSpace,ySpace, marker="x")
 plt.show()
 
 #print(addVector(uVector, vVector))
