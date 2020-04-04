@@ -4,8 +4,10 @@ Date: 4April_2020
 Author: Goutham R
 Notes:
 pip3 install --user numpy
+pip3 install --user matplotlib
 """
 import numpy as np
+import matplotlib.pyplot as plt
 
 #x,y
 uVector = [0,1]
@@ -17,6 +19,7 @@ ab = np.array([2,1,3,4])
 
 x = np.array([0, np.pi / 2, np.pi]) # radians
 y = np.sin(x) # radians
+
 
 def addVector(u, v):
     '''
@@ -42,6 +45,11 @@ def subVectorWithNumpy(u: np.ndarray,v: np.ndarray) -> np.ndarray:
     res = u - v
     return res
 
+xSpace = np.linspace(0, 2 * np.pi, 100)
+ySpace = np.sin(xSpace)
+
+plt.plot(xSpace,ySpace)
+plt.show()
 
 #print(addVector(uVector, vVector))
 # print("Vector addition: ", addVectorWithNumpy(np.array(uVector), np.array(vVector)))
@@ -53,6 +61,7 @@ def subVectorWithNumpy(u: np.ndarray,v: np.ndarray) -> np.ndarray:
 # print("AB: ", ab)
 # print("Mean/average of ab: ", ab.mean())
 # print("Max of ab: ", ab.max())
-print("Pi: ", np.pi)
-print("X: ", x)
-print("Y(sin(x)): ",y)
+# print("Pi: ", np.pi)
+# print("X: ", x)
+# print("Y(sin(x)): ",y)
+#print("Linespace between -2,2 of 5 samples: ", np.linspace(-2,2,5))
