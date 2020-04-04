@@ -15,6 +15,9 @@ xV = np.array([2,3])
 
 ab = np.array([2,1,3,4])
 
+x = np.array([0, np.pi / 2, np.pi]) # radians
+y = np.sin(x) # radians
+
 def addVector(u, v):
     '''
     Vector addition without numpy
@@ -50,3 +53,6 @@ def subVectorWithNumpy(u: np.ndarray,v: np.ndarray) -> np.ndarray:
 # print("AB: ", ab)
 # print("Mean/average of ab: ", ab.mean())
 # print("Max of ab: ", ab.max())
+print("Pi: ", np.pi)
+print("X: ", x)
+print("Y(sin(x)): ",y)
