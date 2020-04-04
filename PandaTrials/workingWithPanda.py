@@ -36,6 +36,7 @@ global songs
 
 csv_path = "majorLazor.csv"
 xlsx_path = "majorLazor.xlsx"
+#xlsx_path = "https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/PY0101EN/Chapter%204/Datasets/TopSellingAlbums.xlsx"
 songs = {"album":['Thriller','Back in Black', 'The Darkside of the Moon'], "release":['2011','1980','1969'] ,"Length":['00:42:19','00:42:11','00:00:03']}
 dummy_song = ['a','b',('c','d'),3,['e','f']]
 
